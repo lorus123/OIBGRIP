@@ -1,0 +1,151 @@
+@import "global";
+@import "variables";
+
+body {
+  background-color: $Very-Dark-Blue;
+  background-image: url(../images/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-weight: 400;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+h1 {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  font-weight: 700;
+  // position: fixed;
+}
+
+.card {
+  background-color: $Very-Dark-Desaturated-Blue;
+  border-radius: 3px;
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+}
+
+.new {
+  margin-bottom: 3rem;
+  color: $Dark-Grayish-Blue;
+  width: 100%;
+}
+
+.old {
+  color: $Light-Grayish-Blue;
+  border-bottom: 1px solid $Very-Dark-Grayish-Blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.last {
+  color: $Very-Dark-Grayish-Blue;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.last div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.card-data {
+}
+
+#new-text {
+  border: none;
+  color: $Light-Grayish-Blue;
+  background-color: transparent;
+}
+
+#new-text:focus {
+  border: none;
+  outline: none;
+}
+
+input[type="checkbox"]:checked + label {
+  background-color: $Check-Background;
+  color: $Very-Dark-Grayish-Blue;
+  text-decoration: line-through;
+}
+input[type="checkbox"] + label {
+  position: relative;
+  padding-left: 50px;
+}
+
+input[type="checkbox"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+input[type="checkbox"] + label::before {
+  content: "";
+  height: 24px;
+  width: 24px;
+  border: 2px solid $Dark-Grayish-Blue;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  transform: translate(0, -16%);
+  left: 0;
+}
+input[type="checkbox"]:checked + label::before {
+  display: flex;
+  content: url(../images/icon-check.svg);
+
+  color: white;
+  height: 24px;
+  width: 24px;
+  border: 2px solid $Dark-Grayish-Blue;
+  border-radius: 50%;
+  background: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.theme-light {
+  background-image: url(../images/bg-desktop-light.jpg);
+}
+
+.delete {
+  background-color: transparent;
+  border: none;
+}
+
+#show-active:hover,
+#show-completed:hover,
+#clear-completed:hover {
+  color: $Light-Grayish-Blue;
+  cursor: pointer;
+}
+#show-all {
+  color: $Bright-Blue;
+}
